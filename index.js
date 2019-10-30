@@ -11,11 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const answers = require('./routes/api/answers');
 
 // routes
-app.use('api/v1/answers', answers);
-
-app.get('/', (_, res) => {
-  res.send('hello');
-});
+app.use('/api', answers);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
